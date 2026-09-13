@@ -251,28 +251,6 @@
   var container = document.getElementById('container');
   var footer = document.getElementById('footer');
 
-  // 内嵌默认配置（本地 file:// 协议也能正常显示）
-  var DEFAULT_CONFIG = {
-    "site": {
-      "title": "我的小站",
-      "subtitle": "记录与分享"
-    },
-    "redirect": {
-      "enabled": false,
-      "target": "pages/HunanLandscapes.html"
-    },
-    "pages": [
-      {
-        "title": "湖南山山水水跟着走",
-        "description": "2026湖南旅游白皮书 · 私人定制版",
-        "file": "pages/HunanLandscapes.html",
-        "icon": "🏔️",
-        "tags": ["旅游", "湖南", "张家界"]
-      }
-    ]
-  };
-
-  // 尝试从外部 config.json 加载，失败则使用内嵌默认配置
   fetch('config.json')
     .then(function(res) {
       if (!res.ok) throw new Error('config not found');
@@ -282,7 +260,11 @@
       applyConfig(config);
     })
     .catch(function() {
-      applyConfig(DEFAULT_CONFIG);
+      container.innerHTML =
+        '<div class="empty-state">' +
+          '<div class="empty-icon">📄</div>' +
+          '<p>未找到配置文件</p>' +
+        '</div>';
     });
 
   function applyConfig(config) {
