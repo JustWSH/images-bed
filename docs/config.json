@@ -1,0 +1,19 @@
+{
+  "site": {
+    "title": "我的小站",
+    "subtitle": "记录与分享"
+  },
+  "redirect": {
+    "enabled": false,
+    "target": "pages/湖南山山水水跟着走.html"
+  },
+  "pages": [
+    {
+      "title": "湖南山山水水跟着走",
+      "description": "2026湖南旅游白皮书 · 私人定制版",
+      "file": "pages/湖南山山水水跟着走.html",
+      "icon": "🏔️",
+      "tags": ["旅游", "湖南", "张家界"]
+    }
+  ]
+}
