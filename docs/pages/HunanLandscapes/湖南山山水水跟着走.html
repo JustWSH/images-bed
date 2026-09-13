@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>湖南山山水水跟着走 · 湖南旅游白皮书</title>
+<style>
+  @page { size: A4; margin: 20mm 25mm; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f7f6f2;
+    color: #2c2c2c;
+    line-height: 1.75;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100vh;
+    background: #fff;
+    border-right: 1px solid #e8e5df;
+    padding: 36px 0 24px;
+    overflow-y: auto;
+    z-index: 100;
+  }
+  .sidebar-brand {
+    text-align: center;
+    padding: 0 20px 24px;
+    border-bottom: 1px solid #ecebe7;
+    margin-bottom: 16px;
+  }
+  .sidebar-brand h1 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a1a1a;
+    letter-spacing: 1px;
+  }
+  .sidebar-brand .brand-sub {
+    font-size: 10.5px;
+    color: #999;
+    margin-top: 4px;
+    letter-spacing: 2px;
+  }
+  .nav-section {
+    padding: 0 16px;
+    margin-bottom: 8px;
+  }
+  .nav-section-title {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #aaa;
+    padding: 8px 8px 4px;
+  }
+  .nav-link {
+    display: block;
+    padding: 5px 10px;
+    font-size: 12.5px;
+    color: #555;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: all 0.15s;
+  }
+  .nav-link:hover {
+    background: #f5f4f0;
+    color: #1a1a1a;
+  }
+  .nav-link.active {
+    background: #f0ede7;
+    color: #1a1a1a;
+    font-weight: 500;
+  }
+  .main {
+    margin-left: 220px;
+    padding: 0;
+  }
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 60px 55px 50px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  @media print {
+    body { background: #fff; }
+    .sidebar { display: none; }
+    .main { margin-left: 0; }
+    .page { box-shadow: none; padding: 0; }
+  }
+  .cover {
+    text-align: center;
+    padding: 100px 40px 80px;
+    border-bottom: 1px solid #e0ddd7;
+    margin-bottom: 50px;
+  }
+  .cover-label {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #8a8578;
+    margin-bottom: 28px;
+    border: 1px solid #d4d0c8;
+    padding: 5px 16px;
+    border-radius: 2px;
+  }
+  .cover h1 {
+    font-size: 32px;
+    font-weight: 600;
+    color: #1a1a1a;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+  .cover .subtitle {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 40px;
+    font-weight: 300;
+  }
+  .cover .meta {
+    font-size: 12px;
+    color: #999;
+    line-height: 2;
+  }
+  .cover .meta span {
+    display: inline-block;
+    margin: 0 18px;
+    position: relative;
+  }
+  .cover .meta span:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: -28px;
+    top: 50%;
+    width: 1px;
+    height: 12px;
+    background: #ccc;
+  }
+  h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 45px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1.5px solid #e0ddd7;
+    letter-spacing: 1px;
+  }
+  h2:first-of-type { margin-top: 0; }
+  h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin: 24px 0 10px;
+  }
+  .route-box {
+    background: #f9f8f5;
+    border-left: 3px solid #8a8578;
+    padding: 22px 28px;
+    margin: 18px 0 28px;
+    border-radius: 0 4px 4px 0;
+  }
+  .route-box .route-title {
+    font-size: 12px;
+    color: #8a8578;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .route-steps {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 0;
+    font-size: 13px;
+    color: #444;
+    line-height: 2.2;
+  }
+  .route-steps .step {
+    background: #fff;
+    border: 1px solid #d4d0c8;
+    padding: 3px 12px;
+    border-radius: 3px;
+    font-size: 12.5px;
+  }
+  .route-steps .arrow {
+    color: #b0aba2;
+    font-size: 11px;
+    user-select: none;
+  }
+  .timeline {
+    position: relative;
+    padding-left: 28px;
+    margin: 20px 0;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    bottom: 6px;
+    width: 1px;
+    background: #d4d0c8;
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 28px;
+  }
+  .timeline-item:last-child { margin-bottom: 0; }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -28px;
+    top: 7px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid #8a8578;
+  }
+  .timeline-item.active::before {
+    background: #8a8578;
+  }
+  .timeline-time {
+    font-size: 11px;
+    color: #999;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .timeline-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 6px;
+  }
+  .timeline-desc {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.8;
+  }
+  .timeline-desc strong {
+    color: #333;
+    font-weight: 500;
+  }
+  .spot-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin: 20px 0;
+  }
+  .spot-card {
+    border: 1px solid #e8e5df;
+    border-radius: 5px;
+    padding: 20px;
+    background: #fdfcfa;
+  }
+  .spot-card h4 {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 6px;
+  }
+  .spot-card .spot-tag {
+    display: inline-block;
+    font-size: 10.5px;
+    color: #8a8578;
+    background: #f0ede7;
+    padding: 1px 8px;
+    border-radius: 2px;
+    margin-bottom: 8px;
+  }
+  .spot-card p {
+    font-size: 12.5px;
+    color: #666;
+    line-height: 1.7;
+  }
+  .info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 18px 0;
+    font-size: 13px;
+  }
+  .info-table th {
+    text-align: left;
+    font-weight: 600;
+    color: #444;
+    background: #f5f4f0;
+    padding: 10px 16px;
+    border-bottom: 1px solid #e0ddd7;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  .info-table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid #ecebe7;
+    color: #444;
+    vertical-align: top;
+  }
+  .info-table tr:last-child td { border-bottom: none; }
+  .map-container {
+    margin: 30px 0;
+    text-align: center;
+  }
+  .map-container img {
+    max-width: 100%;
+    border: 1px solid #e0ddd7;
+    border-radius: 4px;
+  }
+  .map-caption {
+    font-size: 11px;
+    color: #999;
+    margin-top: 8px;
+    letter-spacing: 1px;
+  }
+  .tip-box {
+    background: #f9f8f5;
+    border: 1px solid #e8e5df;
+    border-radius: 4px;
+    padding: 18px 22px;
+    margin: 20px 0;
+    font-size: 13px;
+    color: #555;
+    line-height: 1.8;
+  }
+  .tip-box strong {
+    color: #333;
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+  }
+  .template-area {
+    border: 1px dashed #d4d0c8;
+    border-radius: 4px;
+    padding: 40px;
+    text-align: center;
+    color: #bbb;
+    font-size: 13px;
+    margin: 30px 0;
+    background: #fafaf8;
+  }
+  .template-area .tpl-icon {
+    font-size: 28px;
+    margin-bottom: 10px;
+    display: block;
+    opacity: 0.5;
+  }
+  .page-footer {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid #e0ddd7;
+    text-align: center;
+    font-size: 11px;
+    color: #bbb;
+    letter-spacing: 1px;
+  }
+  @media print {
+    .page { padding: 30px 40px; }
+    .cover { padding: 60px 40px 50px; }
+  }
+
+  /* ===== 汉堡菜单按钮 ===== */
+  .menu-toggle {
+    display: none;
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 200;
+    width: 42px;
+    height: 42px;
+    background: #fff;
+    border: 1px solid #e0ddd7;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .menu-toggle .bar {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #555;
+    border-radius: 1px;
+    position: absolute;
+    left: 11px;
+    transition: all 0.3s ease;
+  }
+  .menu-toggle .bar:nth-child(1) { top: 13px; }
+  .menu-toggle .bar:nth-child(2) { top: 20px; }
+  .menu-toggle .bar:nth-child(3) { top: 27px; }
+  .menu-toggle.open .bar:nth-child(1) {
+    top: 20px;
+    transform: rotate(45deg);
+  }
+  .menu-toggle.open .bar:nth-child(2) { opacity: 0; }
+  .menu-toggle.open .bar:nth-child(3) {
+    top: 20px;
+    transform: rotate(-45deg);
+  }
+
+  /* ===== 遮罩层 ===== */
+  .sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.3);
+    z-index: 99;
+  }
+  .sidebar-overlay.show { display: block; }
+
+  /* ===== 移动端适配 ===== */
+  @media screen and (max-width: 768px) {
+    .menu-toggle { display: block; }
+
+    .sidebar {
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      z-index: 150;
+      width: 260px;
+    }
+    .sidebar.open {
+      transform: translateX(0);
+    }
+
+    .main {
+      margin-left: 0;
+    }
+
+    .page {
+      padding: 20px 18px 30px;
+    }
+
+    .cover {
+      padding: 60px 20px 50px;
+    }
+    .cover h1 {
+      font-size: 24px;
+    }
+    .cover .subtitle {
+      font-size: 13px;
+    }
+    .cover .meta span {
+      margin: 0 10px;
+      font-size: 11px;
+    }
+    .cover .meta span:not(:last-child)::after {
+      right: -16px;
+    }
+
+    h2 {
+      font-size: 16px;
+      margin: 30px 0 16px;
+    }
+    h3 {
+      font-size: 13px;
+    }
+
+    .route-box {
+      padding: 16px 18px;
+    }
+    .route-steps .step {
+      font-size: 11.5px;
+      padding: 2px 8px;
+    }
+
+    .spot-grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .timeline {
+      padding-left: 22px;
+    }
+    .timeline-item::before {
+      left: -22px;
+      width: 9px;
+      height: 9px;
+    }
+
+    .info-table {
+      font-size: 12px;
+    }
+    .info-table td:first-child {
+      width: auto;
+      white-space: nowrap;
+    }
+
+    .map-container img {
+      border-radius: 0;
+    }
+
+    .tip-box {
+      padding: 14px 16px;
+      font-size: 12px;
+    }
+
+    .page-footer {
+      font-size: 10px;
+    }
+
+    @media print {
+      .menu-toggle { display: none; }
+      .sidebar-overlay { display: none !important; }
+      .sidebar { transform: none !important; display: none !important; }
+      .page { padding: 15px 20px; }
+      .cover { padding: 40px 20px 30px; }
+    }
+  }
+
+  @media screen and (max-width: 420px) {
+    .cover h1 {
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+    .cover .meta {
+      flex-direction: column;
+      gap: 4px;
+    }
+    .cover .meta span:not(:last-child)::after {
+      display: none;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- 汉堡菜单按钮（移动端） -->
+<button class="menu-toggle" id="menuToggle" aria-label="打开导航菜单">
+  <span class="bar"></span>
+  <span class="bar"></span>
+  <span class="bar"></span>
+</button>
+<!-- 遮罩层 -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-brand">
+    <h1>湖南山山水水跟着走</h1>
+    <div class="brand-sub">Travel Guide</div>
+  </div>
+  <div class="nav-section">
+    <div class="nav-section-title">总览</div>
+    <a href="#cover" class="nav-link active">封面</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-section-title">张家界国家森林公园</div>
+    <a href="#day1" class="nav-link">Day 1 · 东门A线</a>
+    <a href="#day2" class="nav-link">Day 2 · 西门进南门出</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-section-title">张家界大峡谷</div>
+    <a href="#djx" class="nav-link">玻璃桥+大峡谷</a>
+  </div>
+  <div class="nav-section">
+    <div class="nav-section-title">待补充</div>
+    <a href="#tpl-2" class="nav-link">景区三（待补充）</a>
+  </div>
+</nav>
+
+<div class="main">
+<div class="page">
+
+  <div class="cover" id="cover">
+    <div class="cover-label">Travel Guide</div>
+    <h1>湖南山山水水跟着走</h1>
+    <div class="subtitle">湖南省全域旅游白皮书 · 私人定制版</div>
+    <div class="meta">
+      <span>湖南省</span>
+      <span>与你同行</span>
+    </div>
+  </div>
+
+  <h2 id="zjj">张家界国家森林公园</h2>
+
+  <div class="map-container">
+    <img src="https://cdn.jsdelivr.net/gh/JustWSH/images-bed@main/张家界国家森林公园环保车交通运行线路图.jpg" alt="张家界国家森林公园环保车交通运行线路图">
+    <div class="map-caption">张家界国家森林公园环保车交通运行线路图</div>
+  </div>
+
+  <h3 id="day1">Day 1：东门A线 · 经典一日环线</h3>
+  <div class="route-box">
+    <div class="route-title">东门进东门出 · 天子山+袁家界+杨家界 · 约7小时</div>
+    <div class="route-steps">
+      <span class="step">东门（标志门）</span>
+      <span class="arrow">→</span>
+      <span class="step">天子山索道下站</span>
+      <span class="arrow">→</span>
+      <span class="step">天子山索道</span>
+      <span class="arrow">→</span>
+      <span class="step">天子山山顶</span>
+      <span class="arrow">→</span>
+      <span class="step">贺龙公园</span>
+      <span class="arrow">→</span>
+      <span class="step">点将台</span>
+      <span class="arrow">→</span>
+      <span class="step">袁家界</span>
+      <span class="arrow">→</span>
+      <span class="step">天下第一桥</span>
+      <span class="arrow">→</span>
+      <span class="step">迷魂台</span>
+      <span class="arrow">→</span>
+      <span class="step">杨家界索道</span>
+      <span class="arrow">→</span>
+      <span class="step">百龙天梯上站</span>
+      <span class="arrow">→</span>
+      <span class="step">百龙天梯</span>
+      <span class="arrow">→</span>
+      <span class="step">百龙天梯下站</span>
+      <span class="arrow">→</span>
+      <span class="step">水绕四门</span>
+      <span class="arrow">→</span>
+      <span class="step">东门</span>
+    </div>
+  </div>
+
+  <h3>行程详情</h3>
+
+  <div class="timeline">
+    <div class="timeline-item active">
+      <div class="timeline-time">上午 · 约 07:00 - 10:30</div>
+      <div class="timeline-title">天子山片区</div>
+      <div class="timeline-desc">
+        东门（标志门）入园，乘坐环保车约20分钟到达天子山索道下站。购票后乘坐天子山索道上山（约10分钟），抵达天子山山顶。<br>
+        沿山顶游览线依次经过<strong>贺龙公园</strong>（瞻仰贺龙元帅铜像，观景台视野开阔）、<strong>点将台</strong>（远眺峰林如列阵）。此处为天子山核心观景区，建议游览时间约1.5小时。
+      </div>
+    </div>
+
+    <div class="timeline-item active">
+      <div class="timeline-time">上午 · 约 10:30 - 12:30</div>
+      <div class="timeline-title">袁家界片区</div>
+      <div class="timeline-desc">
+        从天子山停车场乘坐环保车前往袁家界（约20-30分钟）。<br>
+        袁家界是电影《阿凡达》悬浮山原型取景地，建议游览时间约1.5-2小时。环保车在袁家界山顶设有<strong>三个站点</strong>，可根据目标景点选择最近的站点下车（详见下方站点指南）。
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-time">中午 · 约 12:30 - 13:30</div>
+      <div class="timeline-title">杨家界索道往返</div>
+      <div class="timeline-desc">
+        从袁家界乘坐环保车前往杨家界（约15-20分钟）。乘坐杨家界索道上山，游览<strong>天然长城</strong>（峰墙地貌奇观，视觉效果独特）。此段为纯索道往返，无需徒步进山，全程约1-1.5小时，较为省力。
+      </div>
+    </div>
+
+    <!-- 袁家界三站点详解 -->
+    <div class="timeline-item">
+      <div class="timeline-time">站点指南</div>
+      <div class="timeline-title">袁家界三个下车站详解</div>
+      <div class="timeline-desc">
+        袁家界并非单一车站，而是由山顶环线上的<strong>三个站点</strong>组成，分别对应不同的游览入口。根据计划游览的景点选择最近的站点下车：
+      </div>
+    </div>
+
+    <div style="margin: 0 0 24px 28px; padding: 18px 22px; background: #f9f8f5; border-left: 3px solid #8a8578; border-radius: 0 4px 4px 0;">
+      <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+        <span style="background: #8a8578; color: #fff; font-size: 11px; padding: 2px 8px; border-radius: 3px; font-weight: 500;">站点 1</span>
+        <strong style="font-size: 13.5px; color: #333;">迷魂台站</strong>
+      </div>
+      <div style="font-size: 12.5px; color: #666; line-height: 1.9;">
+        <strong>地图位置：</strong>位于山顶环线中段，在"天下第一桥站"的右侧（西边）。<br>
+        <strong>适合前往：</strong>迷魂台观景台、乾坤柱（哈利路亚山）、后花园。这里是观赏峰林全景的最佳位置。
+      </div>
+    </div>
+
+    <div style="margin: 0 0 24px 28px; padding: 18px 22px; background: #f9f8f5; border-left: 3px solid #8a8578; border-radius: 0 4px 4px 0;">
+      <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+        <span style="background: #8a8578; color: #fff; font-size: 11px; padding: 2px 8px; border-radius: 3px; font-weight: 500;">站点 2</span>
+        <strong style="font-size: 13.5px; color: #333;">天下第一桥站</strong>
+      </div>
+      <div style="font-size: 12.5px; color: #666; line-height: 1.9;">
+        <strong>地图位置：</strong>位于山顶环线，在"迷魂台站"的左侧（东边）。<br>
+        <strong>适合前往：</strong>天下第一桥景点本身、乾坤柱（哈利路亚山）。从"迷魂台"步行到"天下第一桥"是常规路线。
+      </div>
+    </div>
+
+    <div style="margin: 0 0 24px 28px; padding: 18px 22px; background: #f9f8f5; border-left: 3px solid #8a8578; border-radius: 0 4px 4px 0;">
+      <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+        <span style="background: #8a8578; color: #fff; font-size: 11px; padding: 2px 8px; border-radius: 3px; font-weight: 500;">站点 3</span>
+        <strong style="font-size: 13.5px; color: #333;">百龙天梯上站</strong>
+      </div>
+      <div style="font-size: 12.5px; color: #666; line-height: 1.9;">
+        <strong>地图位置：</strong>位于山顶环线最左端（最西端），紧挨着百龙天梯电梯图标。<br>
+        <strong>适合前往：</strong>乘坐百龙天梯下山。如果选择从袁家界离开景区，需要在这里下车换乘天梯。
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-time">下午 · 约 14:00 - 16:00</div>
+      <div class="timeline-title">百龙天梯下山</div>
+      <div class="timeline-desc">
+        从杨家界乘坐环保车返回袁家界（约15分钟），步行至<strong>百龙天梯上站</strong>。乘坐百龙天梯下山（66秒，垂直高差335米，视觉冲击强烈），抵达百龙天梯下站。<br>
+        换乘环保车至<strong>水绕四门</strong>，再乘环保车返回东门出园。下山路段建议预留1-1.5小时。
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Day 2 备选路线 ===== -->
+  <h3 id="day2">Day 2：二选一</h3>
+
+
+          <!-- 金鞭溪景区导览图 -->
+  <div class="map-container" style="margin-bottom: 24px;">
+    <img src="https://cdn.jsdelivr.net/gh/JustWSH/images-bed@main/金鞭溪景区导览图.png" alt="金鞭溪景区导览图">
+    <div class="map-caption">金鞭溪景区导览图</div>
+  </div>
+
+  <!-- 方案一：金鞭溪徒步（优先推荐） -->
+  <div class="route-box" style="border-left-color: #6b8e6b;">
+    <div class="route-title" style="color: #6b8e6b;">方案一 · 金鞭溪精华段徒步（⭐ 优先推荐）</div>
+    <div class="route-steps">
+      <span class="step">大氧吧广场</span>
+      <span class="arrow">→</span>
+      <span class="step">金鞭岩</span>
+      <span class="arrow">→</span>
+      <span class="step">紫草潭</span>
+      <span class="arrow">→</span>
+      <span class="step">千里相会</span>
+      <span class="arrow">→</span>
+      <span class="step">原路折返</span>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-time">全程约 1.5 - 2 小时</div>
+      <div class="timeline-title">金鞭溪精华段 · 峡谷溪流与猕猴乐园</div>
+      <div class="timeline-desc">
+        从<strong>大氧吧广场</strong>出发，沿金鞭溪栈道徒步。途经<strong>金鞭岩</strong>（形似金鞭的石英砂岩柱，是张家界的标志性景观之一）、<strong>紫草潭</strong>（清澈潭水，适合休息拍照），最终抵达<strong>千里相会</strong>（两峰相依，形态逼真），然后原路折返。<br>
+        <strong>优势：</strong>全程平路栈道，无台阶，走起来轻松舒适。核心景观全部打卡，沿途还能偶遇野生猕猴。是大多数人游览金鞭溪的首选方式。
+      </div>
+    </div>
+  </div>
+
+  <div class="tip-box">
+    <strong>🐒 金鞭溪一定要记住的提醒</strong>
+    <strong>1. 尽量早上 8 点左右进谷</strong>，晨雾氛围感拉满，游客最少。<br>
+    <strong>2. 猴子集中在紫草潭到千里相会一带</strong>，零食塑料袋收好，不要投喂。<br>
+    <strong>3. 雨后步道青苔湿滑，一定要穿防滑鞋子</strong>，不要下到河滩玩水。<br>
+    <strong>4. 峡谷补给点很少，自带饮用水，备好驱蚊液。</strong>
+  </div>
+  <div style="margin: 0 0 28px 28px; padding: 16px 22px; border-left: 3px solid #d4d0c8; border-radius: 0 4px 4px 0; font-size: 13px; color: #777; line-height: 2; font-style: italic;">
+    不赶时间就慢慢沿着溪水散步，<br>
+    听流水叮咚，看奇峰从林间探出，<br>
+    这就是金鞭溪独有的山野浪漫。
+  </div>
+
+  <!-- 金鞭溪详细信息 -->
+  <div style="margin: 24px 0; padding: 20px 24px; background: #f9f8f5; border-radius: 6px;">
+    <h4 style="color: #6b8e6b; margin-bottom: 12px;">🏞️ 金鞭溪景区详情</h4>
+    <div style="font-size: 13.5px; color: #555; line-height: 2;">
+      <p><strong>金鞭溪全长约 7.5 公里</strong>，一般游览时间在 <strong>2.5 到 3 小时</strong>左右。因为全程基本是平缓的栈道和石板路，几乎没有爬升，所以走起来比较轻松，适合大多数人的体力。</p>
+      
+      <h5 style="color: #8a8578; margin: 16px 0 8px;">🧭 游玩路线与时间建议</h5>
+      <ul style="margin-left: 20px; margin-bottom: 12px;">
+        <li><strong>全程徒步（2.5 - 3.5 小时）</strong>：从南门（大氧吧广场）进，一路走到水绕四门出。全程下坡或平路，不费体力。走完可以直接在终点坐环保车回东门，或者去百龙天梯衔接山上行程，不走回头路。</li>
+        <li><strong>精华半程（1.5 - 2 小时）</strong>：从南门（大氧吧广场）走到千里相会或紫草潭，然后原路返回南门。这段路集中了金鞭岩、神鹰护鞭等核心景观，还能近距离看猕猴，适合时间紧或带老人小孩的游客。</li>
+        <li><strong>反向避人流（3 小时左右）</strong>：从东门坐环保车到水绕四门，逆流往上走到大氧吧广场出。这样走人少清静，可以独享溪谷的幽静，但全程是上坡，对体力有一定要求。</li>
+      </ul>
+      
+      <h5 style="color: #8a8578; margin: 16px 0 8px;">📸 沿途必打卡景点</h5>
+      <ul style="margin-left: 20px; margin-bottom: 12px;">
+        <li><strong>金鞭岩与神鹰护鞭</strong>：金鞭溪的标志景观，380米高的石峰在阳光下金光闪闪，旁边一块巨石形似雄鹰，非常壮观。</li>
+        <li><strong>紫草潭</strong>：潭水碧绿如玉，水质清澈见底，坐在潭边石阶上听溪水叮咚，非常惬意。</li>
+        <li><strong>千里相会</strong>：两块巨石像久别重逢的恋人，是情侣打卡的热门点。</li>
+        <li><strong>西游记取景地</strong>：86版《西游记》花果山、水帘洞的拍摄地，很多游客会在这里拍照留念。</li>
+      </ul>
+      
+      <h5 style="color: #8a8578; margin: 16px 0 8px;">⚠️ 避坑与注意事项</h5>
+      <ul style="margin-left: 20px; margin-bottom: 12px;">
+        <li><strong>防范猕猴</strong>：猴子主要集中在紫草潭到千里相会一带以及两端入口。<strong>千万不要手提塑料袋、水瓶或帽子</strong>，不要当面投喂或逗弄猴子，以免被抓伤。建议把零食收进背包里。</li>
+        <li><strong>穿着建议</strong>：一定要穿防滑运动鞋！溪边石头湿滑，千万不要穿拖鞋。</li>
+        <li><strong>自备补给</strong>：沿途商店很少且价格偏高，建议自带充足的饮用水和一些高热量零食。</li>
+        <li><strong>提前上厕所</strong>：进谷前一定要在入口处解决好上厕所的问题，沿途基本没有卫生间。</li>
+        <li><strong>最佳时间</strong>：建议早上 8 点左右进谷，晨雾氛围感拉满，游客最少，而且山里早晚温差大，记得带件薄外套和驱蚊液。</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 方案二：杨家界+黄石寨 -->
+  <div class="route-box" style="margin-top: 36px;">
+    <div class="route-title">方案二 · 西门进，南门出（高效不重样）</div>
+    <div class="route-steps">
+      <span class="step">西门（杨家界门票站）</span>
+      <span class="arrow">→</span>
+      <span class="step">杨家界索道上山</span>
+      <span class="arrow">→</span>
+      <span class="step">天然长城（核心精华，必拍）</span>
+      <span class="arrow">→</span>
+      <span class="step">原路索道下山</span>
+      <span class="arrow">→</span>
+      <span class="step">环保车 → 南门</span>
+      <span class="arrow">→</span>
+      <span class="step">黄石寨索道上山</span>
+      <span class="arrow">→</span>
+      <span class="step">黄石寨大环线</span>
+      <span class="arrow">→</span>
+      <span class="step">索道下山 → 南门/东门出</span>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-time">上午</div>
+      <div class="timeline-title">杨家界 · 绝版峰墙</div>
+      <div class="timeline-desc">
+        从<strong>西门（杨家界门票站）</strong>入园，乘坐杨家界索道上山。游览<strong>天然长城</strong>（核心精华，峰墙地貌必拍），然后原路索道下山。<br>
+        <strong>优势：</strong>直接从西门进，省去从东门绕路的时间。只看精华，不走回头路，不伤膝盖。
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-time">下午</div>
+      <div class="timeline-title">黄石寨 · 全景视野</div>
+      <div class="timeline-desc">
+        乘坐环保车前往<strong>南门（森林公园门票站）</strong>，乘坐黄石寨索道上山。游览<strong>黄石寨大环线</strong>（六奇阁、摘星台），山顶视角与天子山互补。<br>
+        <strong>优势：</strong>黄石寨的山顶视角与天子山互补，能体验到完全不同的峰林景观。
+      </div>
+    </div>
+  </div>
+
+  <div class="tip-box">
+    <strong>💡 两日行程亮点</strong>
+    <strong>零重叠：</strong>Day 1 在东边（天子山/百龙天梯），Day 2 根据选择不同方向——方案一走谷底溪流（金鞭溪），方案二走西北+南（杨家界/黄石寨），与 Day 1 完全错开。<br>
+    <strong>更科学：</strong>两天分别体验山顶俯瞰、峰墙奇观、峡谷溪流，视觉层次丰富。
+  </div>
+  <div class="tip-box">
+    <strong>🚌 交通衔接小贴士（方案二）</strong>
+    西门 ↔ 南门/东门之间有一定距离（车程约20-30分钟），建议提前联系好包车或拼车，或者利用景区内的环保车网络（需在中转站换乘），确保行程顺畅。
+  </div>
+
+  <h3>核心景点速览</h3>
+  <div class="spot-grid">
+    <div class="spot-card">
+      <h4>贺龙公园</h4>
+      <span class="spot-tag">天子山</span>
+      <p>天子山山顶核心观景台，可俯瞰连绵峰林。园内矗立贺龙元帅铜像，兼具人文与自然景观。</p>
+    </div>
+    <div class="spot-card">
+      <h4>点将台</h4>
+      <span class="spot-tag">天子山</span>
+      <p>远眺石英砂岩峰林如列阵点将，是天子山线路上视野最为开阔的观景点之一。由此可换乘环保车前往杨家界方向。</p>
+    </div>
+    <div class="spot-card">
+      <h4>天下第一桥</h4>
+      <span class="spot-tag">袁家界 · 天下第一桥站</span>
+      <p>天然形成的石桥横跨两座巨大石峰之间，垂直高差极大，是袁家界的标志性景观。</p>
+    </div>
+    <div class="spot-card">
+      <h4>迷魂台</h4>
+      <span class="spot-tag">袁家界 · 迷魂台站</span>
+      <p>袁家界视角最佳的观景台，群峰若隐若现于云雾之中，"迷魂"之名由此而来。雨后初晴最为壮观。</p>
+    </div>
+    <div class="spot-card">
+      <h4>杨家界 · 天然长城</h4>
+      <span class="spot-tag">杨家界</span>
+      <p>独特的"峰墙"地貌，石壁如城墙般绵延，与袁家界的"峰林"、天子山的"峰丛"形成三种不同的地质景观。</p>
+    </div>
+    <div class="spot-card">
+      <h4>百龙天梯</h4>
+      <span class="spot-tag">交通体验</span>
+      <p>世界最高的户外电梯之一，66秒内垂直提升335米，从山顶直达谷底，是体验感极强的下山通道。</p>
+    </div>
+  </div>
+
+  <h3>实用信息</h3>
+  <table class="info-table">
+    <thead>
+      <tr>
+        <th style="width:140px;">项目</th>
+        <th>说明</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>景区大门票</td>
+        <td>约228元/人（含环保车费用，凭门票或刷脸可无限次乘坐环保车）</td>
+      </tr>
+      <tr>
+        <td>天子山索道</td>
+        <td>单程72元，约10分钟。建议提前在"张家界一机游"小程序购买联票</td>
+      </tr>
+      <tr>
+        <td>百龙天梯</td>
+        <td>单程72元，66秒直达。旺季排队时间较长，建议错峰</td>
+      </tr>
+      <tr>
+        <td>杨家界索道</td>
+        <td>单程约50元，索道往返约1-1.5小时（仅坐索道不徒步）</td>
+      </tr>
+      <tr>
+        <td>环保车</td>
+        <td>包含在大门票内，免费乘坐。线路固定，须在指定站点候车，运营时间约07:00-18:00</td>
+      </tr>
+      <tr>
+        <td>门票有效期</td>
+        <td>大门票有效期为 <strong>4天</strong>，多日游玩时后续入园按新的预约时间段刷身份证即可</td>
+      </tr>
+      <tr>
+        <td>全程耗时</td>
+        <td>约6.5-8小时（体力较好者约6小时，含午餐及拍照约8小时）</td>
+      </tr>
+      <tr>
+        <td>建议入园时间</td>
+        <td>07:00-07:30抵达东门，预约 7:00-8:00 时段，避开索道排队高峰</td>
+      </tr>
+      <tr>
+        <td>东门 A/B 线</td>
+        <td>A 线（天子山索道上）和 B 线（百龙天梯上），风景一样只是上下山顺序不同。B 线更省力，是大多数人的首选</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>索道与天梯运营时间</h3>
+  <table class="info-table">
+    <thead>
+      <tr>
+        <th style="width:140px;">设施</th>
+        <th>运营时间</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>天子山索道</td>
+        <td>通常 <strong>7:00</strong> 开始运营，<strong>19:00</strong> 左右停运（淡季可能提前至 17:30-18:00）</td>
+      </tr>
+      <tr>
+        <td>百龙天梯</td>
+        <td>通常 <strong>6:30</strong> 开始售票运营，<strong>19:00</strong> 左右停运。节假日或客流高峰期可能提前开放或延长至最后一名游客下山</td>
+      </tr>
+      <tr>
+        <td>杨家界索道</td>
+        <td>通常 <strong>7:00</strong> 开始运营，<strong>19:00</strong> 左右停运</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="tip-box">
+    <strong>赶早不赶晚</strong>
+    建议早上 7:00 左右到达东门排队入园。第一批入园乘坐环保车和索道/天梯，基本不用排队，能直接"承包"观景台，体验感最好。
+  </div>
+  <div class="tip-box">
+    <strong>注意末班时间</strong>
+    景区大门票和环保车通常在 17:00 左右停止入园或截流，但索道和天梯会运行到 19:00 左右送完最后一名游客。不过为了安全起见，建议<strong>下午 16:30 前就开始规划下山路线</strong>，不要卡点去坐索道。
+  </div>
+
+  <h3>分时段预约规则（非常重要）</h3>
+  <div class="tip-box">
+    <strong>严格按预约时间入园</strong>
+    景区实行<strong>分时段实名预约入园</strong>，购买门票时选定的时间段就是您的检票时间。预约了哪个时间段（如 8:00-9:00），就必须在这个时间段内检票入园。
+  </div>
+  <div class="tip-box">
+    <strong>提前量与迟到处理</strong>
+    一般最多只能<strong>提前 10 分钟</strong>检票（如预约 9:00，8:50 左右才能刷身份证入园，提前太多不让进）。如果错过预约时间段，可能需要联系工作人员改签或重新购票，建议尽量卡点或提前到达。
+  </div>
+
+  <h3>注意事项</h3>
+  <div class="tip-box">
+    <strong>交通须知</strong>
+    景区实行环保管制，社会车辆无法进入。环保车有固定路线和站点，不能随意在路边拦车，须在指定停车场或站点候车。各索道、电梯需单独购票，不包含在大门票内。
+  </div>
+  <div class="tip-box">
+    <strong>下山高峰期</strong>
+    下午16:30-18:00为下山高峰期，百龙天梯排队可能较长。如排队严重，可在杨家界多停留片刻错峰下山。
+  </div>
+  <div class="tip-box">
+    <strong>必带身份证</strong>
+    入园、乘坐索道和天梯都需要<strong>刷身份证</strong>，务必随身携带实体身份证，不要只依赖手机二维码。
+  </div>
+  <div class="tip-box">
+    <strong>装备建议</strong>
+    建议携带轻便运动鞋、饮用水和防晒用品。山顶天气变化较快，建议携带薄外套或雨衣。体力有限者可自备干粮，袁家界停车场附近有简易餐厅。
+  </div>
+
+  <div class="page-footer">湖南山山水水跟着走 · 湖南全域旅游白皮书</div>
+
+  <div style="page-break-before: always;" id="djx"></div>
+  <h2>张家界大峡谷（玻璃桥）</h2>
+  
+  <div class="map-container">
+    <img src="https://cdn.jsdelivr.net/gh/JustWSH/images-bed@main/张家界大峡谷路线图.jpg" alt="张家界大峡谷路线图">
+    <div class="map-caption">张家界大峡谷路线图</div>
+  </div>
+
+  <div class="info-box">
+    <h4>景区基本信息</h4>
+    <div class="info-grid">
+      <div class="info-item">
+        <strong>开放时间</strong>
+        <span>旺季（4-10月）：07:30-17:30<br>淡季（11-3月）：08:00-17:00</span>
+      </div>
+      <div class="info-item">
+        <strong>停止入园</strong>
+        <span>下午16:00左右停止售票及检票<br>建议15:30前到达游客中心</span>
+      </div>
+      <div class="info-item">
+        <strong>推荐票型</strong>
+        <span>B线联票（玻璃桥+大峡谷）<br>提前网购刷身份证入园</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="route-box">
+    <div class="route-title">自驾出行攻略</div>
+    <div class="route-steps">
+      <span class="step">导航至大峡谷游客集散中心（P4停车场）</span>
+      <span class="arrow">→</span>
+      <span class="step">停车（约20元/次）</span>
+      <span class="arrow">→</span>
+      <span class="step">免费摆渡车（10分钟）</span>
+      <span class="arrow">→</span>
+      <span class="step">山顶入口</span>
+    </div>
+  </div>
+
+  <div class="tip-box">
+    <strong>🚗 自驾注意事项</strong>
+    <strong>1. 停车位置：</strong>一定要导航到大峡谷游客集散中心（P4停车场），不要开上山。<br>
+    <strong>2. 接驳方式：</strong>停好车后乘坐免费摆渡车直达山顶入口，车程约10分钟。<br>
+    <strong>3. 优势：</strong>大峡谷是单线游览（从山顶到谷底），出口就在山下集散中心，玩完直接开车走人。<br>
+    <strong>4. 劣势：</strong>从市区或武陵源出发单程需1小时，山路弯道多，晕车者备好晕车药。<br>
+    <strong>5. 物品寄存：</strong>景区安检较严，保温杯和较大物品不能带上玻璃桥。自驾可放车里，打车建议轻装上阵。
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item active">
+      <div class="timeline-time">第一站</div>
+      <div class="timeline-title">玻璃桥打卡</div>
+      <div class="timeline-desc">
+        入园即打卡玻璃桥（300米高空，出片圣地）。建议早上8点左右到达，避开人流高峰。
+      </div>
+    </div>
+
+    <div class="timeline-item active">
+      <div class="timeline-time">核心懒人段</div>
+      <div class="timeline-title">少走楼梯，避开排队王</div>
+      <div class="timeline-desc">
+        <strong>1. 玻璃桥结束→观光电梯</strong>（步行少不排队），坐索道五一排队2h+，根据个人情况灵活选择。<br>
+        <strong>2. 到第二平台→必坐寻宝电梯</strong>（省力直达），别选栈道步行。<br>
+        <strong>3. 寻宝电梯→吴王坡滑道下山</strong>（强推），超长滑梯超解压，全程坐着下山。
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-time">收尾+返程</div>
+      <div class="timeline-title">唯一长时间步行</div>
+      <div class="timeline-desc">
+        滑道下山后→平缓木栈道步行3.5km（不累，沿途看溪流瀑布）→终点码头→坐船返回4号停车场（含在票内，不用走回头路）。
+      </div>
+    </div>
+  </div>
+
+  <div class="map-container">
+    <img src="https://cdn.jsdelivr.net/gh/JustWSH/images-bed@main/张家界大峡谷玻璃桥.jpg" alt="张家界大峡谷玻璃桥">
+    <div class="map-caption">张家界大峡谷玻璃桥</div>
+  </div>
+
+  <div class="tip-box">
+    <strong>⚠️ 游玩注意事项</strong>
+    <strong>1. 最佳时间：</strong>建议早上8点左右入园，避开人流高峰。<br>
+    <strong>2. 穿着建议：</strong>穿防滑运动鞋，玻璃桥上可能需要穿鞋套。<br>
+    <strong>3. 防晒防雨：</strong>峡谷内紫外线较强，建议携带防晒霜和雨衣。<br>
+    <strong>4. 补给：</strong>沿途有小卖部，但价格较高，建议自带饮用水和零食。<br>
+    <strong>5. 体力分配：</strong>全程约3-4小时，核心是玻璃桥+滑道，步行段较轻松。
+  </div>
+
+  <div style="page-break-before: always;" id="tpl-2"></div>
+  <h2>景区三</h2>
+  <div class="template-area">
+    <span class="tpl-icon">&#9670;</span>
+    此处待补充景区名称、地图、路线及景点信息
+  </div>
+
+</div>
+</div>
+
+<script>
+  var sidebar = document.getElementById('sidebar');
+  var menuToggle = document.getElementById('menuToggle');
+  var overlay = document.getElementById('sidebarOverlay');
+
+  function openMenu() {
+    sidebar.classList.add('open');
+    overlay.classList.add('show');
+    menuToggle.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    sidebar.classList.remove('open');
+    overlay.classList.remove('show');
+    menuToggle.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  menuToggle.addEventListener('click', function() {
+    if (sidebar.classList.contains('open')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+  overlay.addEventListener('click', closeMenu);
+
+  function scrollToSection(id) {
+    var el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+    // 移动端点击导航链接后自动关闭菜单
+    if (window.innerWidth <= 768) {
+      closeMenu();
+    }
+  }
+
+  document.querySelectorAll('.nav-link').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelectorAll('.nav-link').forEach(function(l) { l.classList.remove('active'); });
+      this.classList.add('active');
+      var targetId = this.getAttribute('href').replace('#', '');
+      scrollToSection(targetId);
+    });
+  });
+
+  // 监听滚动，自动高亮当前章节导航
+  var sections = document.querySelectorAll('[id]');
+  var navLinks = document.querySelectorAll('.nav-link');
+  window.addEventListener('scroll', function() {
+    var scrollPos = window.scrollY + 120;
+    sections.forEach(function(section) {
+      if (section.offsetTop <= scrollPos && section.offsetTop + section.offsetHeight > scrollPos) {
+        var id = section.getAttribute('id');
+        navLinks.forEach(function(link) {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + id) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
